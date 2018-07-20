@@ -1,0 +1,22 @@
+{
+  "name": "test-mercadolibre",
+  "version": "1.0.0",
+  "description": "Ejercicio pre-empleo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/b.martinez/test-mercadolibre.git"
+  },
+  "author": "Beatriz Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/b.martinez/test-mercadolibre/issues"
+  },
+  "homepage": "https://gitlab.com/b.martinez/test-mercadolibre#README",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
