@@ -1,0 +1,15 @@
+<div class="div-list-products" *ngFor="let item of data">
+  <div class="table" >
+    <div class="table-cell width-180">
+      <img (click)="goToDetail(item.id)" class="img-product" [src]="item.picture">
+    </div>
+    <div class="display-table-cell align-left">
+      <span class="font-size"> {{item.price.currency}} {{item.price.amount}}</span>
+      <span *ngIf="item.free_shipping" class="ico-shipping"></span>
+      <p>{{item.title}}</p>
+    </div>
+    <div class="table-cell">
+      {{item.city}}
+    </div>
+  </div>
+</div>

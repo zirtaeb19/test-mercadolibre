@@ -1,0 +1,21 @@
+<div class="search">
+  <div class="container">
+    <div class="w-20">
+      <img src="../../assets/images/logo.png" alt="Smiley face">
+    </div>
+    <div class="w-80">
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <div class="input-group-area">
+            <input type="text" [(ngModel)]="search.query" name="query" placeholder="Nunca dejes de buscar">
+          </div>
+          <div class="input-group-icon">
+            <button type="submit">
+              <span class="icon-search"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+.div-list-products {
+    width: 68%;
+    background-color: #fff;
+    margin: auto;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    min-height: 212px;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.display-table-cell {
+    display: table-cell;
+    padding-top: 32px;
+    .font-size {
+        font-size: 24px
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 5px
+    }
+    p {
+        margin: 0;
+        padding-top: 32px;
+        font-size: 18px;
+    }
+}
+
+.img-product {
+    height: 180px;
+    width: 180px;
+    border-radius: 4px;
+    margin: 16px;
+}
+
+.width-180 {
+    width: 180px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.ico-shipping {
+    display: block;
+    background-image: url("../../assets/images/ic_shipping.png");
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+}

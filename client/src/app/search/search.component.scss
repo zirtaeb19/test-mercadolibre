@@ -1,0 +1,71 @@
+.search {
+    background-color: #FFE600;
+    width: 100%;
+}
+
+.div-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 5px;
+}
+
+.w-80 {
+    @extend .div-table-cell;
+    width: 80%;
+}
+
+.w-20 {
+    @extend .div-table-cell;
+    width: 20%;
+    text-align: right;
+}
+
+.container {
+    display: table;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.input-group {
+    display: table;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.input-group-icon {
+    @extend .div-table-cell;
+    background: #eee;
+    color: #777;
+    padding: 0 12px;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    width: 5%;
+}
+
+.icon-search {
+    display: block;
+    background-image: url("../../assets/images/ic_Search.png");
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+}
+
+.input-group-area {
+    width: 100%;
+}
+
+.input-group input {
+    display: block;
+    font-size: 18px;
+    color: #333333;
+    border: 0;
+    width: 97.2%;
+    padding: .375rem .75rem;
+    background-color: #fff;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.input-group input::placeholder {
+    color: #999999
+}
