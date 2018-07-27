@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Search } from './search';
 
 @Component({
@@ -8,14 +8,16 @@ import { Search } from './search';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  
-  search = new Search('null');
-  constructor(public router: Router) {
+
+  search = new Search('');
+  constructor(public router: Router, public activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.search.query = params.get('search');
+    });
   }
 
   onSubmit() {

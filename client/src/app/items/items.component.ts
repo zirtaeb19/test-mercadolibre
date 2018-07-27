@@ -19,7 +19,7 @@ export class ItemsComponent implements OnInit {
   }
 
   private searchProduct(value): void {
-    this.http.get("http://localhost:3000/items", { params: { q: value } })
+    this.http.get("http://localhost:3000/api/items", { params: { q: value } })
       .subscribe(
         values => this.httpSuccess(values),
         (err: Response) => err);
