@@ -1,7 +1,37 @@
+ul.breadcrumb {
+    list-style: none;
+    background-color: #eee;
+    padding: 0;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 14px;
+    color: #999999;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #999999;
+    content: "\003e";
+}
+
 .div-list-products {
-    width: 68%;
-    background-color: #fff;
-    margin: auto;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 5%;
+    .content-item {
+        background-color: #fff;
+    }
+}
+
+.content-item::after {
+    content: "";
+    position: absolute;
+    left: 200px;
+    height: 1px;
+    width: 70%;
+    border-bottom: 1px solid #eee;
 }
 
 .table {
@@ -15,10 +45,12 @@
     vertical-align: middle;
 }
 
-.display-table-cell {
+.cell-detail {
     display: table-cell;
     padding-top: 32px;
-    .font-size {
+    width: 55%;
+    text-align: left;
+    .price {
         font-size: 24px
     }
     span {
@@ -40,12 +72,9 @@
     margin: 16px;
 }
 
-.width-180 {
+.cell-picture {
+    @extend .table-cell;
     width: 180px;
-}
-
-.align-left {
-    text-align: left;
 }
 
 .ico-shipping {
@@ -54,4 +83,12 @@
     background-repeat: no-repeat;
     height: 18px;
     width: 18px;
+}
+
+.cell-city {
+    display: table-cell;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    padding-top: 32px;
 }

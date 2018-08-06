@@ -1,29 +1,13 @@
-let author = {
-    name: "Beatriz",
-    lastname: "Martínez"
-}
+const dataConfig = require('../config/dataConfig');
 
-function listItems(body) {
-    let bodyResp = JSON.parse(body);
+function listItems(bodyResp) {
     let categories = categoriesBreadcrumb(bodyResp);
     let data = {
-        author: author,
+        author: dataConfig.author,
         categories: categories
     }
-    data.items = bodyResp.results.map(function (value) {
-        return {
-            "id": value.id,
-            "title": value.title,
-            "price": {
-                "currency": value.currency_id,
-                "amount": value.price,
-                "decimals": value.price
-            },
-            "picture": value.thumbnail,
-            "condition": value.condition,
-            "free_shipping": value.shipping.free_shipping,
-            "city": value.address.city_name
-        };
+    data.items = bodyResp.results.map(value => {
+        return dataConfig.baseDataItem(value);
     });
 
     return data;
@@ -31,11 +15,9 @@ function listItems(body) {
 
 function categoriesBreadcrumb(bodyResp) {
     if (bodyResp.filters.length > 0) {
-        fromFilters(bodyResp.filters[0].values[0].path_from_root);
+        return fromFilters(bodyResp.filters[0].values[0].path_from_root);
     }
-    else {
-        fromAvailableFilters(bodyResp.available_filters[0].values);
-    }
+    return fromAvailableFilters(bodyResp.available_filters[0].values);
 }
 
 function fromFilters(filters) {
@@ -43,7 +25,6 @@ function fromFilters(filters) {
     for (let i = 0, length = filters.length; i < length; i++) {
         categories.push(filters[i].name);
     }
-    console.log(categories);
     return categories;
 }
 
@@ -58,8 +39,7 @@ function fromAvailableFilters(arr) {
             category = arr[i].name;
         }
     }
-    console.log(category);
-    return category;
+    return [category];
 }
 
 module.exports = { listItems };

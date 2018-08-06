@@ -1,15 +1,15 @@
 <div class="search">
-  <div class="container">
-    <div class="w-20">
-      <img src="../../assets/images/logo.png" alt="Smiley face">
+  <div class="block-search">
+    <div class="cell-logo">
+      <a routerLink="/">
+        <img src="../../assets/images/logo.png" alt="Smiley face">
+      </a>
     </div>
-    <div class="w-80">
+    <div class="cell-input">
       <form (ngSubmit)="onSubmit()">
         <div class="input-group">
-          <div class="input-group-area">
-            <input type="text" [(ngModel)]="search.query" name="query" placeholder="Nunca dejes de buscar">
-          </div>
-          <div class="input-group-icon">
+          <input type="text" [(ngModel)]="search.query" name="query" placeholder="Nunca dejes de buscar">
+          <div class="input-group-append">
             <button type="submit">
               <span class="icon-search"></span>
             </button>

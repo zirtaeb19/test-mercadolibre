@@ -1,25 +1,31 @@
-<div *ngIf="!loading" class="div-list-products">
+<div class="content-item">
+  <ul class="breadcrumb">
+    <li>Item</li>
+    <li>Detail</li>
+  </ul>
+  <div *ngIf="!loading" class="content-info-item">
 
-  <div class="table">
-    <div class="table-cell">
-      <img class="img-product" [src]="data.picture">
-    </div>
-    <div class="display-table-cell">
-      <span class="title-condition">{{data.condition}} {{data.sold_quantity}} vendidos</span>
-
-      <span class="title-item">{{data.title}}</span>
-
-      <div class="text-amount">
-        <span> {{data.price.currency}} {{data.price.amount}}</span>
+    <div class="table">
+      <div class="table-cell">
+        <img class="img-product" [src]="data.picture">
       </div>
-
-      <div>
-        <button class="button-buy">Comprar</button>
+      <div class="cell-detail">
+        <span class="title-condition">{{data.condition}} {{data.sold_quantity}} vendidos</span>
+        <span class="title-item">{{data.title}}</span>
+        <div class="text-amount">
+          <span> {{data.price.currency}} {{data.price.amount}}</span>
+        </div>
+        <div>
+          <button class="button-buy">Comprar</button>
+        </div>
       </div>
-
     </div>
+    <div class="content-description">
+      <h3>Descripción del producto</h3>
+      <p>{{data.description}}</p>
+    </div>
+
+
   </div>
-
-  <p>{{data.description}}</p>
 
 </div>

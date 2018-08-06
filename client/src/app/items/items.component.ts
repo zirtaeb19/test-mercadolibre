@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { MessageService } from '../message.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-items',
@@ -10,7 +12,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ItemsComponent implements OnInit {
   data: any;
-  constructor(public activatedRoute: ActivatedRoute, public router: Router, private http: HttpClient) { }
+  loading = true;
+  constructor(public activatedRoute: ActivatedRoute, public router: Router, private http: HttpClient, private messageService: MessageService) { }
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
@@ -19,19 +22,19 @@ export class ItemsComponent implements OnInit {
   }
 
   private searchProduct(value): void {
-    this.http.get("http://localhost:3000/api/items", { params: { q: value } })
+    this.http.get(environment.apiURL + "items", { params: { q: value } })
       .subscribe(
         values => this.httpSuccess(values),
-        (err: Response) => err);
+        (err: Response) => this.httpError(err));
   }
 
   private httpSuccess(values) {
-    this.data = values.items;
-    console.log(values.items);
+    this.data = values;
+    this.loading = false;
   }
 
-  public goToDetail(id) {
-    this.router.navigate(['/items/', id]);
+  private httpError(err) {
+    this.messageService.add(`${err.error.message}`);
   }
 
 }

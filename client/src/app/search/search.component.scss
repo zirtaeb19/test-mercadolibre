@@ -3,43 +3,44 @@
     width: 100%;
 }
 
-.div-table-cell {
+.block-search {
+    display: table;
+    padding: 10px 0;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.table-cell {
     display: table-cell;
     vertical-align: middle;
     padding: 0 5px;
 }
 
-.w-80 {
-    @extend .div-table-cell;
-    width: 80%;
-}
-
-.w-20 {
-    @extend .div-table-cell;
-    width: 20%;
+.cell-logo {
+    @extend .table-cell;
+    width: 1%;
     text-align: right;
+    padding-left: 0;
 }
 
-.container {
-    display: table;
-    padding: 5px 0;
+.cell-input {
+    @extend .table-cell;
+    padding-right: 0;
     width: 100%;
 }
 
+
 .input-group {
-    display: table;
-    border-collapse: collapse;
-    width: 80%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%
 }
 
-.input-group-icon {
-    @extend .div-table-cell;
-    background: #eee;
-    color: #777;
-    padding: 0 12px;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
-    width: 5%;
+.input-group-append {
+    margin-left: -1px;
+    display: flex;
 }
 
 .icon-search {
@@ -50,22 +51,35 @@
     width: 18px;
 }
 
-.input-group-area {
-    width: 100%;
-}
-
-.input-group input {
+input {
+    flex: 1 1 auto;
+    width: 1%;
     display: block;
-    font-size: 18px;
-    color: #333333;
-    border: 0;
-    width: 97.2%;
     padding: .375rem .75rem;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333333;
     background-color: #fff;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: .25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .input-group input::placeholder {
     color: #999999
+}
+
+button {
+    display: inline-block;
+    border: 0;
+    padding: .375rem .75rem;
+    line-height: 1.8;
+    border-radius: .25rem;
+    background-color: #EEEEEE;
+    background-image: none;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

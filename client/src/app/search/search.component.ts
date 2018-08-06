@@ -21,7 +21,9 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['/items'], { queryParams: { search: this.search.query } });
+    if (this.search.query) {
+      this.router.navigate(['/items'], { queryParams: { search: this.search.query } });
+    }
   }
 
 

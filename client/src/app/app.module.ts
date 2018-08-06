@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemsDetailComponent } from './items-detail/items-detail.component';
 import { MessageService } from './message.service';
+import { MessagesComponent }    from './messages/messages.component';
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -17,7 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'tour-of-heroes' }),
+    BrowserModule.withServerTransition({ appId: 'test-mercado-libre' }),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -26,7 +27,8 @@ import { isPlatformBrowser } from '@angular/common';
     AppComponent,
     SearchComponent,
     ItemsComponent,
-    ItemsDetailComponent
+    ItemsDetailComponent,
+    MessagesComponent
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
