@@ -19,7 +19,6 @@ function baseDataItem(item) {
             "decimals": item.price,
         },
         "picture": item.thumbnail,
-        //"picture": item.pictures[0].url,
         "condition": condition[item.condition],
         "free_shipping": item.shipping.free_shipping,
         "sold_quantity": item.sold_quantity,
