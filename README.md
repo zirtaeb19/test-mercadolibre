@@ -6,7 +6,7 @@ Ejercicio test para mercado libre.
 - Previamente se debe ejecutar un **npm install**.
 - Luego levantamos la aplicación con el comando **node app.js**.
 
-# Cliente
+# Client
 - Para iniciar el cliente nos colocamos en la raíz de la carpeta **client**.
 - Previamente se debe ejecutar un **npm install**.
 - Se debe correr el comando **npm run build:ssr** y luego **npm run serve:ssr** para levantar el servidor.
