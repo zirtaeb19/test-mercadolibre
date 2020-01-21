@@ -1,5 +1,5 @@
-# test-mercadolibre
-Ejercicio test para mercado libre.
+# test-angular
+Ejercicio de prueba con angular.
 
 # server
 - Para iniciar el servidor nos colocamos en la raíz de la carpeta **server**.
